@@ -115,47 +115,47 @@ void loop() {
 ## ⚙️ USAGE
 
 ### Class `TwaiManager`
-
-#### `bool begin(uint8_t tx_pin, uint8_t rx_pin):`
-
-- Returns `bool` - `True` if TWAI driver started correctly, `False` if any error starting driver.
-
+#### Parameters
+- No parameters
+#### Methods
+##### `begin(uint8_t tx_pin, uint8_t rx_pin)`
 Calling this function will start the TWAI driver.
-
-**Parameters:**
-- `tx_pin: uint8_t` - Transmit pin of microcontroller.
-- `rx_pin: uint8_t` - Receive pin of microcontroller.
----
-
-#### `bool transmitFrame(uint8_t motor_id, uint8_t cmd_id, uint16_t master_id, uint8_t (&data)[8]):`
-
-- Returns `bool` - `True` if Frame was transmited correctly, else `False`
-
+- Returns:
+  - `bool` - `True` if TWAI driver started correctly, `False` if any error starting driver.
+- Parameters:
+  - `tx_pin: uint8_t` - Transmit pin of microcontroller.
+  - `rx_pin: uint8_t` - Receive pin of microcontroller.
+##### `transmitFrame(uint8_t motor_id, uint8_t cmd_id, uint16_t master_id, uint8_t (&data)[8])`
 Calling this function will transmit the CAN Frame.
-
-**Parameters:**
-- `motor_id: uint8_t` - The target motor CAN ID
-- `cmd_id: uint8_t` - The Xiaomi Cybergear Protocol Communication Type
-- `master_id: uint8_t` - The Host/Master CAN ID
-- `data[8]: uint8_t` - The CAN Frame Data field. Array of fixed size 8 bytes.
----
-
-#### `bool receiveFrame(twai_message_t &rx_msg):`
-
-- Returns `bool` - `True` if a CAN Frame available, else `False`
-
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `motor_id: uint8_t` - The target motor CAN ID
+  - `cmd_id: uint8_t` - The Xiaomi Cybergear Protocol Communication Type
+  - `master_id: uint8_t` - The Host/Master CAN ID
+  - `data[8]: uint8_t` - The CAN Frame Data field. Array of fixed size 8 bytes.
+##### `receiveFrame(twai_message_t &rx_msg)`
 Calling this function will read the next received CAN frame from the RX buffer queue (note the queue can have multiple frames waiting. This function reads the oldest one).
 The received frame is assigned to the *rx_msg* variable
 
-**Parameters:**
-- `rx_msg: twai_message_t` - The [TWAI Struct](https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/peripherals/twai.html#_CPPv414twai_message_t) for receive messages
+- Returns:
+  - `bool` - `True` if a CAN Frame available, else `False`
+- Parameters:
+  - `rx_msg: twai_message_t` - The [TWAI Struct](https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/peripherals/twai.html#_CPPv414twai_message_t) for receive messages
 ---
 
 ### Class `CyberGearMotor`
-**Parameters:**
-- `twai: TwaiManager` - Object of [TwaiManager](#class-twaimanager)
-- `motor_can_id: uint8_t` - The motor CAN ID
-- `master_can_id: uint8_t` - The Host/Master ID
+#### Parameters
+  - `twai: TwaiManager` - Object of [TwaiManager](#class-twaimanager)
+  - `motor_can_id: uint8_t` - The motor CAN ID
+  - `master_can_id: uint8_t` - The Host/Master ID
+#### Methods
+##### `getStatus()`
+Calling this method will send CAN frame to the motor and will wait for the response. This method **BLOCKS** at least 20ms.
+- Returns:
+  - [`CyberGearStatus`](#struct-cybergearstatus) - Struct that contains the response data in its members.
+- Parameters:
+  - `No parameters`
 
 ---
 
