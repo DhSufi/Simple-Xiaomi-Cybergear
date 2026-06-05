@@ -173,8 +173,42 @@ Calling this method will send CAN frame to the motor. This method does **NOT** b
   - `bool` - `True` if Frame was transmited correctly, else `False`
 - Parameters:
   - `addr: uint16_t` - The index of the parameter to be requested (See Xiaomi Instrucction Manual)
+##### `enable()`
+Calling this method will send *ENABLE* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `No parameters`
+##### `stop()`
+Calling this method will send *STOP* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `No parameters`
+##### `setZeroPos()`
+Calling this method will send *RESET MECHANICAL POSITION TO ZERO* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `No parameters`
+##### `setRunMode(uint8_t mode)`
+Calling this method will send *SET MODE* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `mode: uint8_t` - Mode could be: 0 (MIT Control), 1 (Position mode), 2 (Speed mode), 3 (Electric current mode)
+ 
 
 
+
+
+
+##### `setCanId(uint8_t new_can_id)`
+**The use of this method is discouraged** (it is better to use the official software tool for setting up the motors). Calling this method will send *SET CAN ID* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager). If the transmission is successful, this method also updates the instance motor ID (Note this method will **NOT** check the response from the motor, It is assumed that the motor ID change was successful if CAN frame was transmitted).
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `new_can_id: uint8_t` - The new motor CAN ID (Recommemded between 0 and 127)
 
 
 
