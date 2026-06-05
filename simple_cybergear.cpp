@@ -237,8 +237,15 @@ bool CyberGearMotor::callStatus() {
     return _twai->transmitFrame(_motor_id, CMD_GET_STATUS, _master_id, data);
 }
 
-bool CyberGearMotor::callParam(float addr) {
-    return _readFloatParam(addr);
+bool CyberGearMotor::callParam(uint16_t addr) {
+    if (_twai == nullptr) return false;
+
+    uint8_t data[8] = {
+        static_cast<uint8_t>(addr),
+        static_cast<uint8_t>(addr >> 8),
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+    };
+    return _twai->transmitFrame(_motor_id, CMD_RAM_READ, _master_id, data);
 }
 
 CyberGearStatus CyberGearMotor::getStatus() {
