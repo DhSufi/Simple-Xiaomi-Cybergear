@@ -73,7 +73,7 @@ public:
     bool setSpeedRef(float speed);
     bool setMITRef(float target_position, float target_speed, float target_torque, float kp, float kd);
     bool callStatus();
-    bool callParam(float addr);
+    bool callParam(uint16_t addr);
 
 private:
     TwaiManager *_twai;
