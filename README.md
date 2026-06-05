@@ -197,12 +197,88 @@ Calling this method will send *SET MODE* CAN frame to the motor. This method doe
   - `bool` - `True` if Frame was transmited correctly, else `False`
 - Parameters:
   - `mode: uint8_t` - Mode could be: 0 (MIT Control), 1 (Position mode), 2 (Speed mode), 3 (Electric current mode)
- 
-
-
-
-
-
+##### `setCurrentLimit(float current)`
+Calling this method will send *SET CURRENT LIMIT* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `current: float` - The value desired to be set.
+##### `setTorqueLimit(float torque)`
+Calling this method will send *SET TORQUE LIMIT* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `torque: float` - The value desired to be set.
+##### `setSpeedLimit(float speed)`
+Calling this method will send *SET SPEED LIMIT* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `speed: float` - The value desired to be set.
+##### `setCurrentKp(float kp)`
+Calling this method will send *SET KP FOR CURRENT* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `kp: float` - The value desired to be set.
+##### `setCurrentKi(float ki)`
+Calling this method will send *SET KI FOR CURRENT* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `ki: float` - The value desired to be set.
+##### `setFilterGain(float gain)`
+Calling this method will send *SET FILTER COEFICIENT FOR CURRENT* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `gain: float` - The value desired to be set.
+##### `setCurrentRef(float current)`
+Calling this method will send *SET CURRENT* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `current: float` - The value desired to be set.
+##### `setPositionKp(float kp)`
+Calling this method will send *SET KP FOR POSITION* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `kp: float` - The value desired to be set.
+##### `setPositionRef(float position)`
+Calling this method will send *SET POSITION* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `position: float` - The value desired to be set.
+##### `setSpeedKp(float kp)`
+Calling this method will send *SET KP FOR SPEED* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `kp: float` - The value desired to be set.
+##### `setSpeedKi(float ki)`
+Calling this method will send *SET KI FOR SPEED* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `ki: float` - The value desired to be set.
+##### `setSpeedRef(float speed)`
+Calling this method will send *SET SPEED* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `speed: float` - The value desired to be set.
+##### `setMITRef(float target_position, float target_speed, float target_torque, float kp, float kd)`
+Calling this method will send *SET MIT CONTROL VALUES* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `target_position: float` - The value desired to be set.
+  - `target_speed: float` - The value desired to be set.
+  - `target_torque: float` - The value desired to be set.
+  - `kp: float` - The value desired to be set.
+  - `kd: float` - The value desired to be set.
 ##### `setCanId(uint8_t new_can_id)`
 **The use of this method is discouraged** (it is better to use the official software tool for setting up the motors). Calling this method will send *SET CAN ID* CAN frame to the motor. This method does **NOT** block. If a response is required, it is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager). If the transmission is successful, this method also updates the instance motor ID (Note this method will **NOT** check the response from the motor, It is assumed that the motor ID change was successful if CAN frame was transmitted).
 - Returns:
