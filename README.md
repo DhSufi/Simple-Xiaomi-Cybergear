@@ -157,6 +157,13 @@ Calling this method will send CAN frame to the motor and will wait for the respo
 - Parameters:
   - `No parameters`
 
+
+##### `callStatus()`
+Calling this method will send CAN frame to the motor. It does not block. It is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `No parameters`
 ---
 
 ### Struct `CyberGearStatus`
