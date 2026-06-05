@@ -65,7 +65,7 @@ void setup() {
   // Let's set motor2 speed limit to 30 rad/s
   motor2.setSpeedLimit(30); // Range of speed limit is from 0 rad/s to 30 rad/s.
 
-  // As long as we are using Position mode, we could ask the motor for the current position or jus reset it to zero.
+  // As long as we are using Position mode, we could ask the motor for the current position or just reset it to zero.
   // Let's reset the position of motor2 to zero.
   motor2.setZeroPos(); // Now the current position of the motor2 is zero.
 
