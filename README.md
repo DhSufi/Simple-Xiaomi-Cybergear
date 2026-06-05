@@ -122,7 +122,7 @@ void loop() {
 
 ### Class `CyberGearMotor`
 **Parameters:**
-- `twai: TwaiManager` - Object of [TwaiManager](https://github.com/DhSufi/Simple-Xiaomi-Cybergear/edit/main/README.md#LLineNumber).
+- `twai: TwaiManager` - Object of [TwaiManager](https://github.com/DhSufi/Simple-Xiaomi-Cybergear/blob/main/README.md#LLineNumber).
 - `motor_can_id: uint8_t` - The motor CAN ID
 - `master_can_id: uint8_t` - The Host/Master ID
 
