@@ -1,7 +1,9 @@
 # Simple-Xiaomi-Cybergear
 A lightweight C++ library to control Xiaomi Cybergear brushless motors using ESP32 TWAI (CAN bus) and Arduino.
 
-Based on [Daniel Kalicki](https://github.com/DanielKalicki/Xiaomi_CyberGear_Arduino) work. 
+Based on [Daniel Kalicki](https://github.com/DanielKalicki/Xiaomi_CyberGear_Arduino) work.
+
+[Xiaomi Instruction Manual (English)](https://github.com/belovictor/cybergear-docs/blob/main/instructionmanual/instructionmanual.md)
 
 ## 🛠️ Hardware Setup
 TODO
