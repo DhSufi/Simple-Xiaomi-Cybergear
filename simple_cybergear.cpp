@@ -48,8 +48,8 @@ bool TwaiManager::receiveFrame(twai_message_t &rx_msg) {
         return true; 
     }
 
-    uint32_t alerts_triggered = 0;
-    esp_err_t err = twai_read_alerts(&alerts_triggered, pdMS_TO_TICKS(0));
+    // uint32_t alerts_triggered = 0;
+    // esp_err_t err = twai_read_alerts(&alerts_triggered, pdMS_TO_TICKS(0));
     // if (err == ESP_OK && alerts_triggered != 0) {
     //     if (alerts_triggered & TWAI_ALERT_BUS_OFF) {
     //         Serial.println("Critical Error: CAN bus Bus-Off.");
