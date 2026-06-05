@@ -287,7 +287,7 @@ Calling this method will send *SET MIT CONTROL VALUES* CAN frame to the motor. T
   - `new_can_id: uint8_t` - The new motor CAN ID (Recommemded between 0 and 127)
 ---
 ### Struct `CyberGearStatus`
-**Parameters:**
+**Members:**
 - `cmd_id: uint8_t` - The index of the parameter
 - `host_id: uint8_t` - The Host/Master ID
 - `motor_id: uint8_t` - The motor CAN ID
@@ -307,7 +307,7 @@ Calling this method will send *SET MIT CONTROL VALUES* CAN frame to the motor. T
 ---
 
 ### Struct `CyberGearParam`
-**Parameters:**
+**Members:**
 - `cmd_id: uint8_t` - The index of the parameter
 - `host_id: uint8_t` - The Host/Master ID
 - `motor_id: uint8_t` - The motor CAN ID
