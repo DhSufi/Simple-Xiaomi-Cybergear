@@ -128,5 +128,41 @@ void loop() {
 
 ---
 
+### Struct `CyberGearStatus`
+**Parameters:**
+- `cmd_id: uint8_t` - The index of the parameter
+- `host_id: uint8_t` - The Host/Master ID
+- `motor_id: uint8_t` - The motor CAN ID
+- `motor_mode: uint8_t` - Motor mode
+- `calibrated: bool` - Error in calibration
+- `hall_encoder: bool` - Error in hall encoder
+- `magnet_encoder: bool` - Error in magnet encoder
+- `over_temp: bool` - Motor over temperature
+- `over_curr: bool` - Motor over current
+- `under_volt: bool` - Motor undervolt
+- `position: float` - Motor position
+- `speed: float` - Motor speed
+- `torque: float` - Motor torque
+- `temp: uint16_t` - Motor temperature
+- `updated: bool` - Response status
+
+---
+
+### Struct `CyberGearParam`
+**Parameters:**
+- `cmd_id: uint8_t` - The index of the parameter
+- `host_id: uint8_t` - The Host/Master ID
+- `motor_id: uint8_t` - The motor CAN ID
+- `updated: bool` - Response status
+- `value: union` - Store the response value
+  - `value u32: uint32_t` - For raw data or Read data as uint32_t
+  - `value i32: int32_t`  - Read data as int32_t
+  - `value u16: uint16_t` - Read data as uint16_t
+  - `value i16: int16_t`  - Read data as int16_t
+  - `value u8: uint8_t`   - Read data as uint8_t
+  - `value f: float`      - Read data as float
+
+---
+
 
 
