@@ -114,10 +114,29 @@ void loop() {
 ## ⚙️ USAGE
 
 ### Class `TwaiManager`
+
+#### `bool begin(uint8_t tx_pin, uint8_t rx_pin):`
+
+- Returns `bool` - `True` if TWAI driver started correctly, `False` if any error starting driver.
+
+Calling this function will start the TWAI driver.
+
 **Parameters:**
 - `tx_pin: uint8_t` - Transmit pin of microcontroller.
 - `rx_pin: uint8_t` - Receive pin of microcontroller.
+---
 
+#### `bool transmitFrame(uint8_t motor_id, uint8_t cmd_id, uint16_t master_id, uint8_t (&data)[8]):`
+
+- Returns `bool` - `True` if Frame was transmited correctly, `False` if not transmited
+
+Calling this function will transmit the Frame.
+
+**Parameters:**
+- `motor_id: uint8_t` - The target motor CAN ID
+- `cmd_id: uint8_t` - The index 
+- `cmd_id: uint8_t` - 
+- `data[8]: uint8_t` - 
 ---
 
 ### Class `CyberGearMotor`
