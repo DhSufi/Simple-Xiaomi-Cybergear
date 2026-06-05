@@ -143,7 +143,6 @@ The received frame is assigned to the *rx_msg* variable
 - Parameters:
   - `rx_msg: twai_message_t` - The [TWAI Struct](https://docs.espressif.com/projects/esp-idf/en/release-v4.3/esp32/api-reference/peripherals/twai.html#_CPPv414twai_message_t) for receive messages
 ---
-
 ### Class `CyberGearMotor`
 #### Parameters
   - `twai: TwaiManager` - Object of [TwaiManager](#class-twaimanager)
@@ -156,14 +155,29 @@ Calling this method will send CAN frame to the motor and will wait for the respo
   - [`CyberGearStatus`](#struct-cybergearstatus) - Struct that contains the response data in its members.
 - Parameters:
   - `No parameters`
-
-
 ##### `callStatus()`
-Calling this method will send CAN frame to the motor. It does not block. It is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+Calling this method will send CAN frame to the motor. This method does **NOT** block. It is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
 - Returns:
   - `bool` - `True` if Frame was transmited correctly, else `False`
 - Parameters:
   - `No parameters`
+##### `getParam(uint16_t addr)`
+Calling this method will send CAN frame to the motor and will wait for the response. This method **BLOCKS** at least 20ms.
+- Returns:
+  - [`CyberGearParam`](#struct-cybergearparam) - Struct that contains the response data in its members.
+- Parameters:
+  - `addr: uint16_t` - The index of the parameter to be requested (See Xiaomi Instrucction Manual)
+##### `callParam(uint16_t addr)`
+Calling this method will send CAN frame to the motor. This method does **NOT** block. It is neccesary to manually get the response using [receiveFrame](#receiveframetwai_message_t-rx_msg) method from [Class TwaiManager](#class-twaimanager)
+- Returns:
+  - `bool` - `True` if Frame was transmited correctly, else `False`
+- Parameters:
+  - `addr: uint16_t` - The index of the parameter to be requested (See Xiaomi Instrucction Manual)
+
+
+
+
+
 ---
 
 ### Struct `CyberGearStatus`
