@@ -1,10 +1,19 @@
 # Simple-Xiaomi-Cybergear
-Simple library to control Xiaomi Cybergear motor
+A lightweight C++ library to control Xiaomi Cybergear brushless motors using ESP32 TWAI (CAN bus) and Arduino.
 
 Based on [Daniel Kalicki](https://github.com/DanielKalicki/Xiaomi_CyberGear_Arduino) work. 
 
+## 🛠️ Hardware Setup
+TODO
+---
 
-## Usage
+## 📥 Installation
+1.  Download as .ZIP.
+2.  Arduino IDE: **Sketch** -> **Include Library** -> **Add .ZIP Library...**
+
+---
+
+## 💻 Code Example
 
 Basic example of how to configure and control two Xiaomi CyberGear motors using an M5Stack AtomS3 (or any ESP32)
 
@@ -99,3 +108,7 @@ void loop() {
 
 }
 ```
+
+
+
+
