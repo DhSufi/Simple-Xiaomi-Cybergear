@@ -18,14 +18,14 @@ enum CyberGearCommands : uint8_t {
 enum CyberGearAddresses : uint16_t {
     ADDR_RUN_MODE             = 0x7005,
     ADDR_POSITION_REF         = 0x7016,
-    ADDR_POSITION_KP          = 0x2016,
+    ADDR_POSITION_KP          = 0x701E,
     ADDR_CURRENT_REF          = 0x7006,
     ADDR_CURRENT_KP           = 0x7010,
     ADDR_CURRENT_KI           = 0x7011,
     ADDR_CURRENT_FILTER_GAIN  = 0x7014,
     ADDR_SPEED_REF            = 0x700A,
-    ADDR_SPEED_KP             = 0x2014,
-    ADDR_SPEED_KI             = 0x2015,
+    ADDR_SPEED_KP             = 0x701F,
+    ADDR_SPEED_KI             = 0x7020,
     ADDR_LIMIT_CURRENT        = 0x7018,
     ADDR_LIMIT_SPEED          = 0x7017,
     ADDR_LIMIT_TORQUE         = 0x700B
