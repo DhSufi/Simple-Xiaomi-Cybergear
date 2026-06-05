@@ -32,7 +32,7 @@ In this example, `motor2` is set to position mode and mechanically follows the m
 // CAN ids
 uint8_t motor1_CAN_ID = 15; // Xiaomi Recommended between 0 and 127 both inclusive
 uint8_t motor2_CAN_ID = 16; // Xiaomi Recommended between 0 and 127 both inclusive
-uint8_t MASTER_CAN_ID = 3;  // Recommended > 127. Xiaomi official software uses 253
+uint8_t MASTER_CAN_ID = 151;  // Recommended > 127. Xiaomi official software uses 253
 
 // Create instance of class TwaiManager
 TwaiManager myTwai;
