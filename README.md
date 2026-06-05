@@ -285,11 +285,7 @@ Calling this method will send *SET MIT CONTROL VALUES* CAN frame to the motor. T
   - `bool` - `True` if Frame was transmited correctly, else `False`
 - Parameters:
   - `new_can_id: uint8_t` - The new motor CAN ID (Recommemded between 0 and 127)
-
-
-
 ---
-
 ### Struct `CyberGearStatus`
 **Parameters:**
 - `cmd_id: uint8_t` - The index of the parameter
@@ -306,7 +302,7 @@ Calling this method will send *SET MIT CONTROL VALUES* CAN frame to the motor. T
 - `speed: float` - Motor speed
 - `torque: float` - Motor torque
 - `temp: uint16_t` - Motor temperature
-- `updated: bool` - Response status
+- `updated: bool` - Response status. Always first check member updated. If an error occurred sending or receiving the CAN frame, it will be false.
 
 ---
 
@@ -315,7 +311,7 @@ Calling this method will send *SET MIT CONTROL VALUES* CAN frame to the motor. T
 - `cmd_id: uint8_t` - The index of the parameter
 - `host_id: uint8_t` - The Host/Master ID
 - `motor_id: uint8_t` - The motor CAN ID
-- `updated: bool` - Response status
+- `updated: bool` - Response status. Always first check member updated. If an error occurred sending or receiving the CAN frame, it will be false.
 - `value: union` - Store the response value
   - `value u32: uint32_t` - For raw data or Read data as uint32_t
   - `value i32: int32_t`  - Read data as int32_t
