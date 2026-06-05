@@ -111,6 +111,22 @@ void loop() {
 }
 ```
 
+## ⚙️ USAGE
+
+### Class `TwaiManager`
+**Parameters:**
+- `tx_pin: uint8_t` - Transmit pin of microcontroller.
+- `rx_pin: uint8_t` - Receive pin of microcontroller.
+
+---
+
+### Class `CyberGearMotor`
+**Parameters:**
+- `twai: TwaiManager` - Object of [TwaiManager](https://github.com/DhSufi/Simple-Xiaomi-Cybergear/edit/main/README.md#LLineNumber).
+- `motor_can_id: uint8_t` - The motor CAN ID
+- `master_can_id: uint8_t` - The Host/Master ID
+
+---
 
 
 
